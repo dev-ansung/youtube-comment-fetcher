@@ -61,7 +61,7 @@ uvx git+https://github.com/dev-ansung/youtube-comment-fetcher "dQw4w9WgXcQ" \
 | `--limit` | `100` | Maximum number of comments to fetch. Set to `0` for no limit. |
 | `--sort` | `top` | Sort order: `top` (Popular) or `new` (Recent). |
 | `--language` | `None` | Optional language code (e.g., `en`, `es`) to influence parsing. |
-| `--format` | `json` | Output format: `json`, `jsonl`, `csv`, or `text`. |
+| `--format` | `text` | Output format: `json`, `jsonl`, `csv`, or `text`. |
 | `--pretty` | `False` | Indent standard `json` output for readability. |
 | `--no-replies`| `False` | Only fetch top-level comments (skip reply threads). |
 | `--min-likes` | `0` | Skip comments with fewer than this many likes. |

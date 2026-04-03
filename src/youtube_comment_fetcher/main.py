@@ -301,7 +301,7 @@ def main() -> None:
     parser.add_argument(
         "--format",
         choices=["json", "jsonl", "csv", "text"],
-        default="json",
+        default="text",
         help="Output format",
     )
     parser.add_argument("--pretty", action="store_true", help="Indent JSON output")
