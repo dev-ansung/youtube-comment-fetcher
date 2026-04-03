@@ -7,7 +7,7 @@ from pathlib import Path
 from types import SimpleNamespace
 from unittest.mock import patch
 
-from main import (
+from src.youtube_comment_fetcher.main import (
     SORT_BY_POPULAR,
     YoutubeCommentDownloader,
     extract_video_id,
@@ -82,7 +82,9 @@ class TestCommentSchema(unittest.TestCase):
                 "post",
                 side_effect=AssertionError("No POST calls expected"),
             ),
-            patch("main.dateparser.parse", return_value=None),
+            patch(
+                "src.youtube_comment_fetcher.main.dateparser.parse", return_value=None
+            ),
             patch.object(downloader, "ajax_request", return_value=response_data),
         ):
             comments = list(
@@ -189,7 +191,7 @@ class TestCLI(unittest.TestCase):
         with (
             patch("sys.argv", ["main.py"] + args),
             patch(
-                "main.YoutubeCommentDownloader.get_comments_from_url",
+                "src.youtube_comment_fetcher.main.YoutubeCommentDownloader.get_comments_from_url",
                 return_value=(c for c in self.mock_comments),
             ),
             patch("sys.stdout", new_callable=io.StringIO) as mock_stdout,

@@ -1,7 +1,13 @@
 [project]
 name = "youtube-comment-fetcher"
 version = "0.1.0"
-description = "Add your description here"
-readme = "README.md"
-requires-python = ">=3.14"
-dependencies = ["dateparser", "requests"]
+description = "A simple YouTube comment scraper"
+requires-python = ">=3.11"
+dependencies = ["requests", "dateparser"]
+
+[project.scripts]
+youtube-comment-fetcher = "youtube_comment_fetcher.main:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
